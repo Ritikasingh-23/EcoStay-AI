@@ -9,7 +9,7 @@ let websiteContent = {
   // Stuff for the big top section (the "hero")
   heroTitle: "Welcome to KRISHI-CONNECT",
   heroDescription: "Connect with farmers and suppliers to find the best deals and services.",
-  heroButtonText: "Get Started",
+  heroButtonText: "Learn More",
 
   // Stuff for the "Our Services" section
   servicesTitle: "KRISHI-CONNECT Our Services",
