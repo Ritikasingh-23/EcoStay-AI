@@ -2,6 +2,8 @@
 // This is the FOOTER component!
 // It's the bar at the BOTTOM of every page!
 // ========================================
+import websiteContent from './content';
+
 function Footer() {
   return (
     <footer className="bg-gray-900 text-white py-8 mt-auto"> 
@@ -24,7 +26,7 @@ function Footer() {
 
           <div className="text-gray-400"> 
             {/* text-gray-400 = light gray text */}
-            © 2025 RISHI-CONNECT. All rights reserved. 
+            © 2026 {websiteContent.siteName}. All rights reserved. 
           </div>
 
           <div className="flex gap-6"> 
@@ -54,4 +56,4 @@ function Footer() {
   );
 }
 
-export default Footer; // This lets other files use this component!
+export default Footer;
