@@ -1,62 +1,70 @@
-// ========================================
-// This file is like a "settings" file!
-// Change the words here, and they change EVERYWHERE on the website!
-// ========================================
+
 let websiteContent = {
-  // The name of your website
-  siteName: "KRISHI-CONNECT",
+  siteName: "EcoStay AI",
 
-  // Stuff for the big top section (the "hero")
-  heroTitle: "Welcome to KRISHI-CONNECT",
-  heroDescription: "Connect with farmers and suppliers to find the best deals and services.",
-  heroButtonText: "Learn More",
+  heroTitle: "Welcome to EcoStay AI",
+  heroDescription: "Discover eco-friendly homestays and local experiences with AI-powered recommendations for sustainable tourism.",
+  heroButtonText: "Find Your Stay",
 
-  // Stuff for the "Our Services" section
-  servicesTitle: "KRISHI-CONNECT Our Services",
+  popularStaysTitle: "Popular Eco-Stays",
+  popularStays: [
+    {
+      title: "Mountain View Cabin",
+      description: "A cozy cabin in the Himalayas with solar power and organic meals.",
+      location: "Uttarakhand, India"
+    },
+    {
+      title: "Beachside Eco-Villa",
+      description: "Sustainable villa made from local materials, steps from the ocean.",
+      location: "Goa, India"
+    },
+    {
+      title: "Forest Treehouse",
+      description: "Unique treehouse stay surrounded by nature, perfect for adventure.",
+      location: "Kerala, India"
+    }
+  ],
+
+  servicesTitle: "EcoStay AI Features",
   services: [
     {
-      title: "Web Development",
-      description: "Building fast and modern websites using Next.js and Tailwind CSS."
+      title: "Eco-Friendly Homestays",
+      description: "Search and book sustainable homestays that support local communities."
     },
     {
-      title: "Mobile Apps",
-      description: "Creating responsive applications that work on all devices."
+      title: "AI Itinerary Generator",
+      description: "Get personalized travel plans based on your budget and interests."
     },
     {
-      title: "Design",
-      description: "Beautiful and intuitive user interfaces that users love."
+      title: "Local Experiences",
+      description: "Discover cultural activities and nearby eco-friendly attractions."
     }
   ],
 
-  // Stuff for the "Contact Us" section
-  contactTitle: "KRISHI-CONNECT Contact Us",
-  contactEmail: "hello@krishi-connect.com",
-  contactPhone: "+1 (555) 123-4567",
+  contactTitle: "Get In Touch",
+  contactEmail: "hello@ecostay.ai",
+  contactPhone: "+1 (555) 987-6543",
 
-  // Stuff for the "About Us" page
-  aboutTitle: "About Us",
-  aboutDescription1: "Welcome to KRISHI-CONNECT!",
-  aboutDescription2: "We are a team of dedicated individuals who are passionate about helping people connect with their local farms and agricultural products.",
+  aboutTitle: "About EcoStay AI",
+  aboutDescription1: "We help travelers connect with sustainable stays and local cultures.",
+  aboutDescription2: "Our mission is to promote responsible tourism and support local communities worldwide.",
   aboutFeatures: [
     {
-      title: "KRISHI-CONNECT Fast",
-      description: "We provide fast and reliable services to help you connect with your local farms."
+      title: "AI Travel Assistant",
+      description: "Chat with our AI for instant travel advice and recommendations."
     },
     {
-      title: "KRISHI-CONNECT Reliable",
-      description: "We ensure that you get the best service possible, every time."
+      title: "Personalized Picks",
+      description: "Tailored suggestions based on your preferences and budget."
     },
     {
-      title: "KRISHI-CONNECT Affordable",
-      description: "We offer competitive pricing to ensure that you get the best value for your money."
+      title: "Sustainable Focus",
+      description: "Every booking supports eco-friendly practices and local economies."
     }
   ],
 
-  // Stuff for the signin page
-  signinTitle: "KRISHI-CONNECT Sign In",
-
-  // Stuff for the dashboard page
-  dashboardTitle: "KRISHI-CONNECT Dashboard"
+  signinTitle: "Sign In to EcoStay AI",
+  dashboardTitle: "EcoStay AI Dashboard"
 };
 
 export default websiteContent;

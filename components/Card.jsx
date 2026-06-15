@@ -1,47 +1,30 @@
 // ========================================
-// This is the CARD component!
-// It's a little box that shows a service!
+// This is the CARD component for EcoStay AI!
+// Shows each feature in a box!
 // ========================================
 function Card(props) {
-  // props are like little packages of info we give to this component!
-  let cardTitle = props.title; // This is the title for this card
-  let cardDescription = props.description; // This is the description for this card
+  // props = info we give this component!
+  let cardTitle = props.title;
+  let cardDescription = props.description;
 
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200"> 
-      {/* bg-white = white background */}
-      {/* rounded-lg = rounded corners */}
-      {/* shadow-md = add a little shadow to make it look 3D */}
-      {/* overflow-hidden = hide anything that sticks out */}
-      {/* border = add a border line */}
-      {/* border-gray-200 = light gray border color */}
+    <div className="bg-white rounded-lg shadow-md overflow-hidden border border-green-200"> 
+      {/* Green border to match theme! */}
 
-      <div className="h-48 bg-gray-100 flex items-center justify-center"> 
-        {/* h-48 = 48 units tall */}
-        {/* bg-gray-100 = very light gray background */}
-        {/* flex items-center justify-center = put the emoji in the middle */}
-
-        <span className="text-4xl">📦</span> 
-        {/* text-4xl = big emoji! */}
-        {/* This is a box emoji! 📦 */}
-
+      <div className="h-48 bg-green-50 flex items-center justify-center"> 
+        {/* Light green background! */}
+        <span className="text-4xl">🏡🌳</span> 
+        {/* Eco-home emojis! */}
       </div>
 
       <div className="p-6"> 
-        {/* p-6 = padding of 6 units inside */}
-
-        <h3 className="text-xl font-bold mb-2">{cardTitle}</h3> 
-        {/* text-xl = extra large text */}
-        {/* font-bold = bold text */}
-        {/* mb-2 = a little space below the title */}
-
-        <p className="text-gray-600">{cardDescription}</p> 
-        {/* text-gray-600 = medium gray text */}
-
+        <h3 className="text-xl font-bold mb-2 text-green-800">{cardTitle}</h3> 
+        {/* Green title text! */}
+        <p className="text-gray-600">{cardDescription}</p>
       </div>
 
     </div>
   );
 }
 
-export default Card; // This lets other files use this component!
+export default Card;

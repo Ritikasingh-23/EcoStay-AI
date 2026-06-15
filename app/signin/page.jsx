@@ -1,12 +1,12 @@
 'use client'; // Don't worry about this line - Next.js needs it!
 
-import { useState } from 'react'; // This lets us remember things (like what the user types)
+import { useState } from 'react'; // Remember what user types!
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import websiteContent from '../../components/content';
 
 // ========================================
-// This is the SIGNIN PAGE (renamed from login)!
+// EcoStay AI SIGN IN PAGE!
 // ========================================
 function SigninPage() {
   let [emailInput, setEmailInput] = useState('');
@@ -14,14 +14,13 @@ function SigninPage() {
   let [messageText, setMessageText] = useState('');
   let [messageColorClass, setMessageColorClass] = useState('');
 
-  function handleLoginClick(event) {
+  function handleSigninClick(event) {
     event.preventDefault();
-
     if (emailInput !== '' && passwordInput !== '') {
-      setMessageText('RISHI-CONNECT Sign in successful!');
+      setMessageText('Welcome back to EcoStay AI! 🎉');
       setMessageColorClass('bg-green-100 text-green-800');
     } else {
-      setMessageText('RISHI-CONNECT Please fill in both fields');
+      setMessageText('Please fill in both email and password!');
       setMessageColorClass('bg-red-100 text-red-800');
     }
   }
@@ -31,24 +30,24 @@ function SigninPage() {
       <Navbar />
       <main className="flex-1 py-16">
         <div className="max-w-md mx-auto px-4">
-          <h1 className="text-4xl font-bold mb-6 text-center">{websiteContent.signinTitle}</h1>
+          <h1 className="text-4xl font-bold mb-6 text-center text-green-900">{websiteContent.signinTitle}</h1>
           <p className="text-lg text-gray-700 mb-8 text-center">
-            Welcome back! Please sign in to your account.
+            Ready for your next eco-friendly adventure? Sign in!
           </p>
 
-          <div className="bg-white p-8 rounded-lg shadow-md border border-gray-200">
+          <div className="bg-white p-8 rounded-lg shadow-md border border-green-200">
             {messageText && (
               <p className={`mb-4 p-3 rounded-lg text-center ${messageColorClass}`}>
                 {messageText}
               </p>
             )}
 
-            <form onSubmit={handleLoginClick}>
+            <form onSubmit={handleSigninClick}>
               <div className="mb-4">
                 <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
                 <input 
                   type="email" 
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                  className="w-full px-3 py-2 border border-green-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" 
                   placeholder="your@email.com"
                   value={emailInput}
                   onChange={(event) => setEmailInput(event.target.value)}
@@ -59,7 +58,7 @@ function SigninPage() {
                 <label className="block text-sm font-medium text-gray-700 mb-2">Password</label>
                 <input 
                   type="password" 
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                  className="w-full px-3 py-2 border border-green-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" 
                   placeholder="••••••••"
                   value={passwordInput}
                   onChange={(event) => setPasswordInput(event.target.value)}
@@ -68,7 +67,7 @@ function SigninPage() {
 
               <button 
                 type="submit"
-                className="w-full bg-blue-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+                className="w-full bg-green-700 text-white py-2 rounded-lg font-semibold hover:bg-green-800 transition-colors"
               >
                 Sign In
               </button>
