@@ -1,11 +1,9 @@
-// ========================================
-// This is the CARD component for EcoStay AI!
-// Shows each feature in a box!
-// ========================================
+
 function Card(props) {
   // props = info we give this component!
   let cardTitle = props.title;
   let cardDescription = props.description;
+  let cardLocation = props.location;
 
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden border border-green-200"> 
@@ -20,7 +18,12 @@ function Card(props) {
       <div className="p-6"> 
         <h3 className="text-xl font-bold mb-2 text-green-800">{cardTitle}</h3> 
         {/* Green title text! */}
-        <p className="text-gray-600">{cardDescription}</p>
+        <p className="text-gray-600 mb-2">{cardDescription}</p>
+        {cardLocation && (
+          <p className="text-sm text-green-600 flex items-center gap-1">
+            <span>📍</span> {cardLocation}
+          </p>
+        )}
       </div>
 
     </div>

@@ -18,18 +18,21 @@ function HomePage() {
     <Card 
       title={staysList[0].title} 
       description={staysList[0].description} 
+      location={staysList[0].location}
     />
   );
   let secondStayCard = (
     <Card 
       title={staysList[1].title} 
       description={staysList[1].description} 
+      location={staysList[1].location}
     />
   );
   let thirdStayCard = (
     <Card 
       title={staysList[2].title} 
       description={staysList[2].description} 
+      location={staysList[2].location}
     />
   );
 
