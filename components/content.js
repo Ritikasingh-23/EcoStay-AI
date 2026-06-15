@@ -4,15 +4,15 @@
 // ========================================
 let websiteContent = {
   // The name of your website
-  siteName: "RISHI-CONNECT",
+  siteName: "KRISHI-CONNECT",
 
   // Stuff for the big top section (the "hero")
-  heroTitle: "Welcome to RISHI-CONNECT",
-  heroDescription: "Launch your product with confidence",
+  heroTitle: "Welcome to KRISHI-CONNECT",
+  heroDescription: "Connect with farmers and suppliers to find the best deals and services.",
   heroButtonText: "Get Started",
 
   // Stuff for the "Our Services" section
-  servicesTitle: "RISHI-CONNECT Our Services",
+  servicesTitle: "KRISHI-CONNECT Our Services",
   services: [
     {
       title: "Web Development",
@@ -29,34 +29,34 @@ let websiteContent = {
   ],
 
   // Stuff for the "Contact Us" section
-  contactTitle: "RISHI-CONNECT Contact Us",
+  contactTitle: "KRISHI-CONNECT Contact Us",
   contactEmail: "hello@krishi-connect.com",
   contactPhone: "+1 (555) 123-4567",
 
   // Stuff for the "About Us" page
   aboutTitle: "About Us",
-  aboutDescription1: "Welcome to RISHI-CONNECT!",
+  aboutDescription1: "Welcome to KRISHI-CONNECT!",
   aboutDescription2: "We are a team of dedicated individuals who are passionate about helping people connect with their local farms and agricultural products.",
   aboutFeatures: [
     {
-      title: "RISHI-CONNECT Fast",
+      title: "KRISHI-CONNECT Fast",
       description: "We provide fast and reliable services to help you connect with your local farms."
     },
     {
-      title: "RISHI-CONNECT Reliable",
+      title: "KRISHI-CONNECT Reliable",
       description: "We ensure that you get the best service possible, every time."
     },
     {
-      title: "RISHI-CONNECT Affordable",
+      title: "KRISHI-CONNECT Affordable",
       description: "We offer competitive pricing to ensure that you get the best value for your money."
     }
   ],
 
-  // Stuff for the login page
-  loginTitle: "RISHI-CONNECT Login",
+  // Stuff for the signin page
+  signinTitle: "KRISHI-CONNECT Sign In",
 
   // Stuff for the dashboard page
-  dashboardTitle: "RISHI-CONNECT Dashboard"
+  dashboardTitle: "KRISHI-CONNECT Dashboard"
 };
 
 export default websiteContent;
