@@ -69,8 +69,7 @@ function HomePage() {
         <section id="popular-stays" className="py-16 bg-green-50"> 
           <div className="max-w-6xl mx-auto px-4"> 
             <h2 className="text-3xl font-bold text-center mb-10 text-green-900">{websiteContent.popularStaysTitle}</h2> 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8"> 
-              {/* Changed to 2 columns on desktop! */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8"> 
               {firstStayCard}
               {secondStayCard}
               {thirdStayCard}
@@ -82,8 +81,7 @@ function HomePage() {
         <section id="services" className="py-16"> 
           <div className="max-w-6xl mx-auto px-4"> 
             <h2 className="text-3xl font-bold text-center mb-10 text-green-900">{websiteContent.servicesTitle}</h2> 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8"> 
-              {/* Changed to 2 columns on desktop! */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8"> 
               {firstFeatureCard}
               {secondFeatureCard}
               {thirdFeatureCard}
