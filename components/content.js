@@ -11,17 +11,20 @@ let websiteContent = {
     {
       title: "Mountain View Cabin",
       description: "A cozy cabin in the Himalayas with solar power and organic meals.",
-      location: "Uttarakhand, India"
+      location: "Uttarakhand, India",
+      price: "$120/night"
     },
     {
       title: "Beachside Eco-Villa",
       description: "Sustainable villa made from local materials, steps from the ocean.",
-      location: "Goa, India"
+      location: "Goa, India",
+      price: "$150/night"
     },
     {
       title: "Forest Treehouse",
       description: "Unique treehouse stay surrounded by nature, perfect for adventure.",
-      location: "Kerala, India"
+      location: "Kerala, India",
+      price: "$90/night"
     }
   ],
 

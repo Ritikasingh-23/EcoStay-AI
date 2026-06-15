@@ -19,6 +19,7 @@ function HomePage() {
       title={staysList[0].title} 
       description={staysList[0].description} 
       location={staysList[0].location}
+      price={staysList[0].price}
     />
   );
   let secondStayCard = (
@@ -26,6 +27,7 @@ function HomePage() {
       title={staysList[1].title} 
       description={staysList[1].description} 
       location={staysList[1].location}
+      price={staysList[1].price}
     />
   );
   let thirdStayCard = (
@@ -33,6 +35,7 @@ function HomePage() {
       title={staysList[2].title} 
       description={staysList[2].description} 
       location={staysList[2].location}
+      price={staysList[2].price}
     />
   );
 
