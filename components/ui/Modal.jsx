@@ -37,16 +37,16 @@ export default function Modal({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 dark:bg-black/70">
       <div
         onClick={(e) => e.stopPropagation()}
-        className={`bg-white rounded-xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto ${className}`}
+        className={`bg-white dark:bg-gray-800 rounded-xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto ${className}`}
       >
-        <div className="flex items-center justify-between p-6 border-b border-gray-200">
-          {title && <h2 className="text-xl font-bold text-gray-800">{title}</h2>}
+        <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
+          {title && <h2 className="text-xl font-bold text-gray-800 dark:text-white">{title}</h2>}
           <button
             onClick={onClose}
-            className="p-2 rounded-full hover:bg-gray-100 text-gray-500 transition-colors"
+            className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-500 dark:text-gray-400 transition-colors"
           >
             <svg
               className="w-5 h-5"
