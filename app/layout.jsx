@@ -1,4 +1,5 @@
 import './globals.css'
+import ChatbotWrapper from './ChatbotWrapper'
 
 export const metadata = {
   title: 'Simple Next.js App',
@@ -8,7 +9,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="min-h-screen flex flex-col">{children}</body>
+      <body className="min-h-screen flex flex-col">
+        {children}
+        <ChatbotWrapper />
+      </body>
     </html>
   )
 }
