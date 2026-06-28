@@ -1,0 +1,156 @@
+{
+  "info": {
+    "name": "EcoStay API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "List All Stays",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/stays",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "stays"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Single Stay",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/stays/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "stays",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Stay",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Test Eco Stay\",\n  \"description\": \"A test eco-friendly stay\",\n  \"location\": \"Test Location\",\n  \"price\": \"$100/night\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/stays",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "stays"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Stay",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Updated Eco Stay\",\n  \"description\": \"An updated eco-friendly stay\",\n  \"location\": \"Updated Location\",\n  \"price\": \"$120/night\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/stays/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "stays",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Stay",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/stays/4",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "stays",
+            "4"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Search Stays",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/stays/search?q=mountain",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "stays",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "q",
+              "value": "mountain"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 'use client'; // Don't worry about this line - Next.js needs it!
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Card from '../components/Card';
@@ -12,7 +12,6 @@ import { Button, Input, Modal, Toast, Loader } from '../components/ui';
 // EcoStay AI HOME PAGE!
 // ========================================
 function HomePage() {
-  let staysList = websiteContent.popularStays;
   let servicesList = websiteContent.services;
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -21,6 +20,27 @@ function HomePage() {
   const [toastMessage, setToastMessage] = useState('');
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [staysList, setStaysList] = useState([]);
+  const [isStaysLoading, setIsStaysLoading] = useState(true);
+  const [staysError, setStaysError] = useState(null);
+
+  useEffect(() => {
+    const fetchStays = async () => {
+      try {
+        setIsStaysLoading(true);
+        const res = await fetch('http://localhost:5000/api/stays');
+        if (!res.ok) throw new Error('Failed to fetch stays');
+        const data = await res.json();
+        setStaysList(data);
+      } catch (err) {
+        setStaysError(err.message);
+        handleShowToast('error', `Error: ${err.message}`);
+      } finally {
+        setIsStaysLoading(false);
+      }
+    };
+    fetchStays();
+  }, []);
 
   const handleShowToast = (type, message) => {
     setToastType(type);
@@ -28,31 +48,16 @@ function HomePage() {
     setShowToast(true);
   };
 
-  // 1st Popular Stay Card
-  let firstStayCard = (
+  // Stay Cards
+  let stayCards = staysList.map((stay, index) => (
     <Card 
-      title={staysList[0].title} 
-      description={staysList[0].description} 
-      location={staysList[0].location}
-      price={staysList[0].price}
+      key={stay.id}
+      title={stay.title} 
+      description={stay.description} 
+      location={stay.location}
+      price={stay.price}
     />
-  );
-  let secondStayCard = (
-    <Card 
-      title={staysList[1].title} 
-      description={staysList[1].description} 
-      location={staysList[1].location}
-      price={staysList[1].price}
-    />
-  );
-  let thirdStayCard = (
-    <Card 
-      title={staysList[2].title} 
-      description={staysList[2].description} 
-      location={staysList[2].location}
-      price={staysList[2].price}
-    />
-  );
+  ));
 
   let firstFeatureCard = (
     <Card 
@@ -84,11 +89,19 @@ function HomePage() {
         <section id="popular-stays" className="py-16 bg-green-50 dark:bg-gray-900"> 
           <div className="max-w-6xl mx-auto px-4"> 
             <h2 className="text-3xl font-bold text-center mb-10 text-green-900 dark:text-white">{websiteContent.popularStaysTitle}</h2> 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8"> 
-              {firstStayCard}
-              {secondStayCard}
-              {thirdStayCard}
-            </div>
+            {isStaysLoading ? (
+              <div className="flex justify-center items-center py-12">
+                <Loader size="lg" />
+              </div>
+            ) : staysError ? (
+              <div className="text-center py-12 text-red-500">
+                <p>Error loading stays: {staysError}</p>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8"> 
+                {stayCards}
+              </div>
+            )}
           </div>
         </section>
 
