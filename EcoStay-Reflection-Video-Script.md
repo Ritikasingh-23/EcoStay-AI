@@ -38,20 +38,23 @@ YOU SPEAK:
 YOU SPEAK: 
 "And here's the final result! My beautiful EcoStay-AI homepage with the hero section, popular stays grid, features, and contact section. It's responsive, has dark mode, and loads data perfectly from the backend!" 
 ## [4:30-5:30] CHALLENGE & DEBUGGING 
-### SCREEN: Show the git history or the commit about fixing Uvicorn reload 
+### SCREEN: Show the git history or the commit "Fix FastAPI server startup issue" 
 YOU SPEAK: 
-"Now, I want to be honest - I faced a big challenge. The Uvicorn server wasn't reloading properly when I made changes! It was frustrating!" 
-### SCREEN: Show the backend-fastapi/main.py before and after the fix 
+"Now, I want to be honest - I faced a BIG technical challenge! The FastAPI server wouldn't start with reload mode enabled at all. I got an error message saying: 'You must pass the application as an import string to enable reload.' It was so frustrating because I couldn't test my changes without restarting the server manually every time!" 
+### SCREEN: Show the backend-fastapi/main.py before and after the fix - point to line 123 
 YOU SPEAK: 
 "But I didn't give up! I debugged it step by step: 
 
-1. First, I checked the FastAPI documentation 
-2. Then I realized the issue - I was passing the app object directly to uvicorn.run() instead of a string 
-3. Finally, I changed it to uvicorn.run('main:app') 
+1. First, I read the error message carefully - it was telling me exactly what was wrong!
+2. Then I realized the issue in line 123 of backend-fastapi/main.py: I was passing the `app` object directly to `uvicorn.run()` instead of an import string
+3. Finally, I changed:
+   `uvicorn.run(app, host="0.0.0.0", port=port, reload=True)`
+   to:
+   `uvicorn.run("main:app", host="0.0.0.0", port=port, reload=True)`
    And boom! It worked perfectly with auto-reload!" 
-### SCREEN: Show the working app with stays loaded 
+### SCREEN: Show the working app with stays loaded and the server reloading on changes 
 YOU SPEAK: 
-"That moment when it finally worked felt amazing! I learned so much about debugging backend applications." 
+"That moment when it finally worked felt amazing! I learned so much about reading error messages carefully and always checking the documentation. This was definitely the biggest technical problem I faced, and solving it was a huge win!" 
 ## [5:30-6:00] FUTURE GOALS 
 ### SCREEN: Show your GitHub repo or a simple slide with bullet points 
 YOU SPEAK: 
