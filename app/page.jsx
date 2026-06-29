@@ -28,7 +28,7 @@ function HomePage() {
     const fetchStays = async () => {
       try {
         setIsStaysLoading(true);
-        const res = await fetch('http://localhost:5000/api/stays');
+        const res = await fetch('http://localhost:8000/api/stays');
         if (!res.ok) throw new Error('Failed to fetch stays');
         const data = await res.json();
         setStaysList(data);

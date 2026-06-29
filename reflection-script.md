@@ -37,34 +37,44 @@ export default function Button({ variant = "primary", children, disabled, ...pro
 
 ---
 
-## [1:20–2:20] Thing 2: Express Backend + REST API (1 minute)
+## [1:20–2:20] Thing 2: FastAPI Backend + REST API (1 minute)
 **Visual:**
-1. Show `backend/server.js`
-2. Show Swagger UI at http://localhost:5000/api-docs
+1. Show `backend-fastapi/main.py`
+2. Show Swagger UI at http://localhost:8000/docs
 
 **Code Snippet:**
-```javascript
-// backend/server.js (Week 4)
-const express = require('express');
-const cors = require('cors');
+```python
+# backend-fastapi/main.py (Week 4)
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
 
-const app = express();
-app.use(cors());
-app.use(express.json());
+app = FastAPI()
+app.add_middleware(CORSMiddleware, allow_origins=["*"])
 
-let ecoStays = [
-  { id: 1, title: "Mountain View Cabin", price: "$120/night" },
-  { id: 2, title: "Beachside Eco-Villa", price: "$150/night" },
-];
+class EcoStay(BaseModel):
+    id: int | None = None
+    title: str
+    description: str
+    location: str
+    price: str
 
-// GET all stays
-app.get('/api/stays', (req, res) => res.json(ecoStays));
+eco_stays = [
+    EcoStay(id=1, title="Mountain View Cabin", price="$120/night"),
+    EcoStay(id=2, title="Beachside Eco-Villa", price="$150/night"),
+]
 
-app.listen(5000, () => console.log("Server on http://localhost:5000"));
+@app.get("/api/stays")
+async def get_all_stays():
+    return eco_stays
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, port=8000, reload=True)
 ```
 
 **Script:**
-> "Second, I built an Express backend with REST API endpoints for CRUD operations (Create/Read/Update/Delete) plus search, and added Swagger UI for easy testing at /api-docs!"
+> "Second, I built a FastAPI backend with REST API endpoints for CRUD operations (Create/Read/Update/Delete) plus search! FastAPI auto-generates awesome docs at /docs and /redoc!"
 
 ---
 
@@ -80,7 +90,7 @@ useEffect(() => {
   const fetchStays = async () => {
     try {
       setIsStaysLoading(true);
-      const res = await fetch('http://localhost:5000/api/stays');
+      const res = await fetch('http://localhost:8000/api/stays');
       const data = await res.json();
       setStaysList(data);
     } catch (err) {
